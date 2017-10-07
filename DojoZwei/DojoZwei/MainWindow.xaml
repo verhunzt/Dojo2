@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DojoZwei"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1050">
-    <Grid Background="Tan">
+    <Grid Background="Black">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="150"/>
@@ -17,12 +17,20 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Margin="5" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <Image HorizontalAlignment="Right" Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Warning-WF.png" Grid.Column="0"></Image>
+                <Label Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Überlauf Grauwasser"  Foreground="White"  ></Label>
+                <Border BorderBrush="DeepPink" BorderThickness="1" Grid.ColumnSpan="2" >
 
-                <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="Überlauf Grauwasser"></Label>
-                <Border BorderBrush="DeepPink" BorderThickness="1" />
+                </Border>
 
             </Grid>
-            <Grid Grid.Row="1"></Grid>
+            <Grid Grid.Row="1">
+                <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="...TBD..." Foreground="White" />
+            </Grid>
 
         </Grid>
         <Grid Grid.Column="1"  >
@@ -37,12 +45,146 @@
                 <RowDefinition Height="315*"/>
                 <RowDefinition Height="70*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Grid.ColumnSpan="2"></Grid>
-            <Grid Grid.Row="1" Grid.ColumnSpan="2"></Grid>
-            <Grid Grid.Row="2" Grid.ColumnSpan="2"></Grid>
-            <Grid Grid.Row="3" Grid.ColumnSpan="2"></Grid>
-            <Grid Grid.Row="4" Grid.ColumnSpan="2"></Grid>
+            <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1">
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Cloud sun02-WF.png"></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.ColumnSpan="1">
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Wind.png"></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Label Content="20°" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" ></Label>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Label Content="12 km/h" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"></Label>
+                </Grid>
+                <Border BorderBrush="AliceBlue" BorderThickness="0 0 0 1" HorizontalAlignment="Right" Width="150" Grid.RowSpan="2" Grid.ColumnSpan="2"></Border>
+            </Grid>
+            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42*"/>
+                    <RowDefinition Height="45*"/>
+                    <RowDefinition Height="45*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0">
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Solar.png"></Image>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Man-01.png"></Image>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Lock-WF.png"></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Label Content="3.545 W" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" ></Label>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Label Content="0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"></Label>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <Label Content="OK" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"></Label>
+                </Grid>
+                <Border BorderBrush="AliceBlue" BorderThickness="0 0 0 1" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+            </Grid>
 
+            <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0">
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Message Mail-WF.png"></Image>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Tasks.png"></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Label Content="7" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" ></Label>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Label Content="4" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"></Label>
+                </Grid>
+                <Border BorderBrush="AliceBlue" BorderThickness="0 0 0 1" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            </Grid>
+            <Grid Grid.Row="3" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="40*"/>
+
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Button Content="Übersicht" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite" ></Button>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Button Content="Räume" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"></Button>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Button Content="Geräte" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"></Button>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Button Content="Gebäude" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"></Button>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Button Content="Sicherheit" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"></Button>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Button Content="Multimedia" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"></Button>
+                </Grid>
+                <Border BorderBrush="AliceBlue" BorderThickness="0 0 0 1" Grid.RowSpan="6"></Border>
+            </Grid>
+            <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Bell New-WF.png"></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Speaker Decrease - 01.png"></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="4" Foreground="White"></Label>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="3">
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Speaker Increase - 02.png"></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.ColumnSpan="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="12*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="20:18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Grid.ColumnSpan="2" Margin="56,4" ></Label>
+                </Grid>
+                
+            </Grid>
+            <Border BorderBrush="AliceBlue" BorderThickness="1 0 0 0" Grid.RowSpan="15" ></Border>
         </Grid>
 
 
