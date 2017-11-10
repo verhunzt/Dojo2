@@ -1,11 +1,15 @@
-﻿<Window x:Class="DojoZwei.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DojoZwei"
+        xmlns:ViewModel="clr-namespace:DojoZwei.ViewModel" x:Class="DojoZwei.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1050">
+    <Window.DataContext>
+        <ViewModel:MainViewModel/>
+    </Window.DataContext>
     <Grid Background="Black">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -21,15 +25,37 @@
                     <ColumnDefinition Width="50*"/>
                     <ColumnDefinition Width="50*"/>
                 </Grid.ColumnDefinitions>
-                <Image HorizontalAlignment="Right" Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Warning-WF.png" Grid.Column="0"></Image>
-                <Label Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Überlauf Grauwasser"  Foreground="White"  ></Label>
-                <Border BorderBrush="DeepPink" BorderThickness="1" Grid.ColumnSpan="2" >
-
-                </Border>
+                <Image HorizontalAlignment="Right" Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Warning-WF.png" Grid.Column="0"/>
+                <Label Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Überlauf Grauwasser"  Foreground="White"  />
+                <Border BorderBrush="DeepPink" BorderThickness="1" Grid.ColumnSpan="2" />
 
             </Grid>
             <Grid Grid.Row="1">
-                <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="...TBD..." Foreground="White" />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Aktoren" Foreground="White"></Label>
+                <Label Grid.Row="3" Content="Sensoren" Foreground="White"></Label>
+                <DockPanel Margin="0 0 20 0" HorizontalAlignment="Right" Grid.Row="2">
+                    <Button Margin="5" Command="{Binding BtnAktHinzu}">Hinzufügen</Button>
+                    <Button  Margin="5" Command="{Binding BtnAktDelete}">Löschen</Button>
+                </DockPanel>
+                <DockPanel Margin="0 0 20 0" HorizontalAlignment="Right" Grid.Row="5">
+                    <Button Margin="5" Command="{Binding BtnSenHinzu}">Hinzufügen</Button>
+                    <Button  Margin="5" Command="{Binding BtnSenDelete}">Löschen</Button>
+                </DockPanel>
+                <Grid Grid.Column="0" Grid.Row="1" >
+                    <DataGrid HorizontalAlignment="Stretch"  Grid.Row="1" VerticalAlignment="Stretch"  />
+                </Grid>
+                <Grid Grid.Column="0" Grid.Row="4" >
+                    <DataGrid HorizontalAlignment="Stretch"  Grid.Row="1" VerticalAlignment="Stretch"  />
+                </Grid>
+
             </Grid>
 
         </Grid>
@@ -55,18 +81,18 @@
                     <RowDefinition Height="20*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1">
-                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Cloud sun02-WF.png"></Image>
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Cloud sun02-WF.png"/>
                 </Grid>
                 <Grid Grid.Row="1" Grid.ColumnSpan="1">
-                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Wind.png"></Image>
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Wind.png"/>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="1">
-                    <Label Content="20°" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" ></Label>
+                    <Label Content="20°" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" />
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="1">
-                    <Label Content="12 km/h" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"></Label>
+                    <Label Content="12 km/h" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                 </Grid>
-                <Border BorderBrush="AliceBlue" BorderThickness="0 0 0 1" HorizontalAlignment="Right" Width="150" Grid.RowSpan="2" Grid.ColumnSpan="2"></Border>
+                <Border BorderBrush="AliceBlue" BorderThickness="0 0 0 1" HorizontalAlignment="Right" Width="150" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
             </Grid>
             <Grid Grid.Row="1" Grid.ColumnSpan="2">
                 <Grid.RowDefinitions>
@@ -79,22 +105,22 @@
                     <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Row="0">
-                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Solar.png"></Image>
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Solar.png"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Man-01.png"></Image>
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Man-01.png"/>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Lock-WF.png"></Image>
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Lock-WF.png"/>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="1">
-                    <Label Content="3.545 W" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" ></Label>
+                    <Label Content="3.545 W" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" />
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="1">
-                    <Label Content="0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"></Label>
+                    <Label Content="0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                 </Grid>
                 <Grid Grid.Row="2" Grid.Column="1">
-                    <Label Content="OK" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"></Label>
+                    <Label Content="OK" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                 </Grid>
                 <Border BorderBrush="AliceBlue" BorderThickness="0 0 0 1" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
             </Grid>
@@ -109,16 +135,16 @@
                     <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Row="0">
-                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Message Mail-WF.png"></Image>
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Message Mail-WF.png"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Tasks.png"></Image>
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Tasks.png"/>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="1">
-                    <Label Content="7" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" ></Label>
+                    <Label Content="7" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" />
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="1">
-                    <Label Content="4" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"></Label>
+                    <Label Content="4" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                 </Grid>
                 <Border BorderBrush="AliceBlue" BorderThickness="0 0 0 1" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
             </Grid>
@@ -133,24 +159,24 @@
 
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <Button Content="Übersicht" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite" ></Button>
+                    <Button Content="Übersicht" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite" />
                 </Grid>
                 <Grid Grid.Row="1">
-                    <Button Content="Räume" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"></Button>
+                    <Button Content="Räume" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"/>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <Button Content="Geräte" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"></Button>
+                    <Button Content="Geräte" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"/>
                 </Grid>
                 <Grid Grid.Row="3">
-                    <Button Content="Gebäude" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"></Button>
+                    <Button Content="Gebäude" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"/>
                 </Grid>
                 <Grid Grid.Row="4">
-                    <Button Content="Sicherheit" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"></Button>
+                    <Button Content="Sicherheit" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"/>
                 </Grid>
                 <Grid Grid.Row="5">
-                    <Button Content="Multimedia" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"></Button>
+                    <Button Content="Multimedia" Margin="5" Background="Black" Foreground="White" BorderBrush="AntiqueWhite"/>
                 </Grid>
-                <Border BorderBrush="AliceBlue" BorderThickness="0 0 0 1" Grid.RowSpan="6"></Border>
+                <Border BorderBrush="AliceBlue" BorderThickness="0 0 0 1" Grid.RowSpan="6"/>
             </Grid>
             <Grid Grid.Row="4" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
@@ -164,27 +190,28 @@
                     <RowDefinition Height="30*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" Grid.Column="0">
-                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Bell New-WF.png"></Image>
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Bell New-WF.png"/>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="1">
-                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Speaker Decrease - 01.png"></Image>
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Speaker Decrease - 01.png"/>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="2">
-                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="4" Foreground="White"></Label>
+                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="4" Foreground="White"/>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="3">
-                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Speaker Increase - 02.png"></Image>
+                    <Image Source="C:\Users\Wisper\Source\Repos\Dojo2\DojoZwei\DojoZwei\Images\Speaker Increase - 02.png"/>
                 </Grid>
                 <Grid Grid.Row="1" Grid.ColumnSpan="4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="13*"/>
                         <ColumnDefinition Width="12*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="20:18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Grid.ColumnSpan="2" Margin="56,4" ></Label>
+                    <Label  HorizontalAlignment="Left" Foreground="White" Grid.ColumnSpan="2"  Content="{Binding DTime}"   />
+                    <Label  HorizontalAlignment="Right" Foreground="White" Grid.ColumnSpan="2"  Content="{Binding DDate}"   />
                 </Grid>
-                
+
             </Grid>
-            <Border BorderBrush="AliceBlue" BorderThickness="1 0 0 0" Grid.RowSpan="15" ></Border>
+            <Border BorderBrush="AliceBlue" BorderThickness="1 0 0 0" Grid.RowSpan="15" />
         </Grid>
 
 
